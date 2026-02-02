@@ -1,4 +1,4 @@
 # TicketService
 Sistema de tickets TI
 ## Datos de Contacto
-Christian Suarez 
+Christian Suarez / Jose Arias
