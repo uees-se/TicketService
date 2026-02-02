@@ -5,14 +5,35 @@
 **Carrera:** Ingeniería de Software I
 
 
-<p style="color:#1f4fd8; font-size:22px; font-weight:bold; text-align:center;">
-UNIVERSIDAD ESPÍRITU SANTO
-</p>
 
-<p style="text-align:center;">
-Carrera de Computación<br>
-Ingeniería de Software I 
-</p>
+<div align="center">
+
+# UNIVERSIDAD ESPÍRITU SANTO
+
+**Ciencias de la Computación**<br>
+**Ingeniería de Software I**
+
+<br>
+
+## GRUPO 5
+
+Christian Leonardo Suarez Rios<br>
+Jose Moises Arias Zavala
+
+<br>
+
+### Questions & Answers  
+### Caso de Estudio  
+**Versión 1.0.0**
+
+<br><br>
+
+**19 de enero, 2026**  
+Guayaquil, Ecuador
+
+</div>
+
+
 
 ## 3. Funcionalidades del sistema
 
