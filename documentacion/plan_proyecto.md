@@ -28,7 +28,6 @@ Guayaquil, Ecuador
 
 
 
-
 ## 🕘 Historial de Versionamiento
 
 | Fecha | Versión                    | Descripción         | Responsable |
