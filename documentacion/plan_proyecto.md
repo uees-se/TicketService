@@ -49,12 +49,14 @@ El presente documento describe el sistema TicketService, el cual permitirá la c
 - Asignación de tickets
 - Reportes de atención
 
----
 
-## 2. Actores del sistema
 
-### 🧑‍💼 Administrador
-Responsable de la configuración, control y supervisión general del sistema.
+### Definiciones, Acrónimos y Abreviaciones
+
+**Ticket**: Solicitud registrada en el sistema.
+**Usuario**: Persona que crea tickets.
+**Agente**: Persona que atiende tickets.
+**SLA**: Acuerdo de nivel de servicio.
 
 **Acciones:**
 - Iniciar sesión
@@ -64,6 +66,14 @@ Responsable de la configuración, control y supervisión general del sistema.
 - Generar reportes y métricas
 
 ---
+
+Descripción Global
+TicketService se compone de los siguientes módulos:
+- Administración
+- Gestión de Tickets
+- Seguimiento
+- Reportes
+
 
 ### 🧑‍🔧 Técnico
 Encargado de resolver las órdenes de trabajo asignadas.
