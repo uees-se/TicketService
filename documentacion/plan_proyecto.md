@@ -14,6 +14,11 @@ Carrera de Computación<br>
 Ingeniería de Software I 
 </p>
 
+## 3. Funcionalidades del sistema
+
+| Fecha | Versión                    | Descripción         | Responsable |
+|------|---------------------------------|---------------|-------------|
+| 19/01/26 | 1.0.0 | Creación del documento TicketService | Equipo de Desarrollo |
 
 ---
 
