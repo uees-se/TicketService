@@ -1,10 +1,3 @@
-# 📌 TicketService – Actores, Funcionalidades y Diagramas
-**Proyecto:** TicketService  
-**Versión:** 1.0.0  
-**Fecha:** 19 de enero de 2026  
-**Carrera:** Ingeniería de Software I
-
-
 
 <div align="center">
 
@@ -35,7 +28,8 @@ Guayaquil, Ecuador
 
 
 
-## 3. Funcionalidades del sistema
+
+## Historial de Versionamiento
 
 | Fecha | Versión                    | Descripción         | Responsable |
 |------|---------------------------------|---------------|-------------|
@@ -45,7 +39,15 @@ Guayaquil, Ecuador
 
 ## 1. Introducción
 
-TicketService es un sistema de información orientado a la **gestión de tickets de servicio y órdenes de trabajo**, diseñado para optimizar los procesos de atención, soporte técnico y mantenimiento en organizaciones públicas y privadas.
+### Propósito
+El presente documento describe el sistema TicketService, el cual permitirá la creación, gestión y seguimiento de tickets de soporte técnico de manera centralizada.
+
+### Alcance
+- Gestión de usuarios y roles
+- Creación, actualización y cierre de tickets
+- Clasificación por prioridad y categoría
+- Asignación de tickets
+- Reportes de atención
 
 ---
 
