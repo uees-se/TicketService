@@ -6,12 +6,12 @@
 
 
 <p style="color:#1f4fd8; font-size:22px; font-weight:bold; text-align:center;">
-UNIVERSIDAD ESPÍRITU SANTO
+UNIVERSIDAD ESPÍRITU SANTO 
 </p>
 
 <p style="text-align:center;">
 Carrera de Computación<br>
-Ingeniería de Software I
+Ingeniería de Software I 
 </p>
 
 
