@@ -29,7 +29,7 @@ Guayaquil, Ecuador
 
 
 
-## Historial de Versionamiento
+## 🕘 Historial de Versionamiento
 
 | Fecha | Versión                    | Descripción         | Responsable |
 |------|---------------------------------|---------------|-------------|
@@ -37,107 +37,110 @@ Guayaquil, Ecuador
 
 ---
 
-## 1. Introducción
+## 📘 1. Introducción
 
-### Propósito
+### 🎯 Propósito
 El presente documento describe el sistema TicketService, el cual permitirá la creación, gestión y seguimiento de tickets de soporte técnico de manera centralizada.
 
-### Alcance
+### 📌 Alcance
 - Gestión de usuarios y roles
 - Creación, actualización y cierre de tickets
 - Clasificación por prioridad y categoría
 - Asignación de tickets
 - Reportes de atención
 
-
-
-### Definiciones, Acrónimos y Abreviaciones
+### 📖 Definiciones, Acrónimos y Abreviaciones
 
 **Ticket**: Solicitud registrada en el sistema.
 **Usuario**: Persona que crea tickets.
 **Agente**: Persona que atiende tickets.
 **SLA**: Acuerdo de nivel de servicio.
-
-**Acciones:**
-- Iniciar sesión
-- Administrar usuarios y roles
-- Configurar SLA
-- Gestionar tickets y órdenes de trabajo
-- Generar reportes y métricas
-
 ---
 
-Descripción Global
+##  🌐 Descripción Global
 TicketService se compone de los siguientes módulos:
 - Administración
 - Gestión de Tickets
 - Seguimiento
 - Reportes
 
+---
 
-### 🧑‍🔧 Técnico
-Encargado de resolver las órdenes de trabajo asignadas.
+## 📍 Posicionamiento
 
-**Acciones:**
-- Iniciar sesión
-- Ver órdenes asignadas
-- Actualizar estado y avances
-- Resolver tickets dentro del SLA
+### 💼 Oportunidad del Negocio
+
+TicketService puede ser comercializado como una solución web para instituciones educativas y pequeñas empresas.
 
 ---
 
-### 🧑‍💻 Usuario
-Cliente interno que solicita soporte mediante tickets.
+## ⚠️ Determinación del Problema
 
-**Acciones:**
-- Iniciar sesión
-- Registrar tickets
-- Consultar estado
-- Ver historial de solicitudes
+
+| Problema | Afectados                | Impacto         | Solución |
+|------|-----------------------------|---------------|-------------|
+| Gestión manual de solicitudes | Usuarios y técnicos | Retrasos y pérdida de información | Implementación de TicketService |
 
 ---
 
-## 3. Funcionalidades del sistema
+## 🧭 Determinación del Problema
 
-| Código | Funcionalidad                    | Actor         | Descripción |
-|------|---------------------------------|---------------|-------------|
-| F1 | Iniciar sesión | Todos | Acceso según rol |
-| F2 | Registrar ticket | Usuario | Crear solicitud de servicio |
-| F3 | Consultar ticket | Usuario | Ver estado y progreso |
-| F4 | Gestionar tickets | Administrador | Clasificar y priorizar |
-| F5 | Asignar órdenes | Administrador | Asignar tickets a técnicos |
-| F6 | Gestionar órdenes | Técnico | Actualizar avances |
-| F7 | Controlar SLA | Administrador | Medir tiempos de atención |
-| F8 | Reportes y métricas | Administrador | Apoyo a decisiones |
-| F9 | Gestión de usuarios | Administrador | Roles y permisos |
+| ¿Para quién? | Nombre del producto  | ¿Qué es?|
+|------|----------------------|-----------------------------------------------------|
+| Organizaciones | TicketService| Sistema de gestión de tickets y órdenes de trabajo  |
 
 ---
 
-## 4. Diagrama de Casos de Uso
+##  👥 Descripción de los Interesados y Usuarios
+###  🤝 Resumen de los Stakeholders
 
-```mermaid
-graph TD
-    Usuario -->|Registrar| Ticket
-    Usuario -->|Consultar| Ticket
-    Administrador -->|Gestionar| Ticket
-    Administrador -->|Asignar| Orden
-    Técnico -->|Atender| Orden
-    Administrador -->|Generar| Reportes
-```
+| Cargo | Representa  | Rol                 |
+|------|----------------------|---------------------|
+| Administrador | Organización| Gestión del sistema |
+| Usuario | Clientes internos| Registro de tickets |
 
-```mermaid
-flowchart LR
-    A[Usuario crea ticket] --> B[Administrador revisa]
-    B --> C[Asigna a técnico]
-    C --> D[Técnico atiende]
-    D --> E[Técnico resuelve]
-    E --> F[Ticket cerrado]
-```
+---
 
-## Gráfico 1. Tickets por Estado
+##  👤  Resumen de los Usuarios
 
-![Gráfico 1. Tickets por Estado](imagenes/tickets_estado.png)
 
-**Descripción:**  
-Este gráfico muestra la distribución de los tickets según su estado actual
-(Abiertos, En Proceso y Cerrados).
+| Nombre | Descripción  |
+|------|----------------------|
+| Administrador | Configura y controla el sistema|
+| Técnico | Resuelve órdenes de trabajo|
+
+---
+
+##  💻  Ambiente del Usuario
+El sistema se ejecutará en navegadores web modernos y será compatible con cualquier sistema operativo.
+
+---
+
+## 🗂️ Descripción del Sistema de Información
+
+###  🔍 Perspectivas
+TicketService es similar a herramientas como Freshdesk o Zendesk, pero orientado a contextos académicos y empresariales básicos.
+### Licenciamiento e Instalación
+Licencia GNU GPL v3.0. Instalación local o en la nube.
+
+
+---
+
+### ⚙️ Características
+**Característica 1**: Gestión de Tickets
+**Característica 2**: Gestión de Usuarios y Roles
+**Característica 3**: Reportes y Seguimiento
+
+---
+
+###  📊  Gráficos
+
+![Gráfico 1. Tickets por Estado](imagenes/Arquitectura.jpg)
+
+![Gráfico 1. Tickets por Estado](imagenes/Flujo_de_ticket.jpg)
+
+### 🧑‍💻 Referencias Bibliográficas
+
+**Pressman, R. (2014). Ingeniería de Software: Un enfoque práctico. McGraw-Hill.**
+**Sommerville, I. (2016). Software Engineering. Pearson Education.**
+**IEEE Computer Society. (2014). Guide to the Software Engineering Body of Knowledge (SWEBOK).**
