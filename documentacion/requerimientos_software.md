@@ -8,11 +8,11 @@
 
 <br>
 
-## Poryecto TicketService
+## Proyecto TicketService
 ## GRUPO 5
 
-Christian Leonardo Suarez Rios<br>
-Jose Moises Arias Zavala
+Christian Leonardo Suarez Ríos<br>
+José Moisés Arias Zavala
 
 <br>
 
