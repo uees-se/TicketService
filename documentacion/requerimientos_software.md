@@ -21,7 +21,7 @@ Jose Moises Arias Zavala
 
 <br><br>
 
-**07 de febreo, 2026**  
+**08 de febreo, 2026**  
 Samborondón, Ecuador
 </div>
 
@@ -92,7 +92,7 @@ TicketService, garantizando su correcta implementación y alineación con las ne
 ### ID Requerimiento: GP-RF-02
 | Nombre | Gestión y Asignación de Tickets |
 |------|--------------------|
-| Objetivo | Permitir la asignación y actualización del estado de los tickets.|
+| Objetivo | Permitir la asignación y actualización del estado de los tickets|
 | Fuente | Administrador|
 | Prioridad | Alta|
 | Descripción | El sistema deberá permitir a los administradores asignar tickets a técnicos, cambiar su estado (abierto, en proceso, cerrado) y registrar comentarios de seguimiento.|
@@ -113,3 +113,7 @@ TicketService, garantizando su correcta implementación y alineación con las ne
 | Responsable | Equipo de Desarrollo|
 
 ---
+
+###  📊  Gráficos
+
+![Gráfico 1. Tickets por Estado](imagenes/Arquitectura.jpg)
