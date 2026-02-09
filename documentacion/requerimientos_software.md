@@ -31,7 +31,7 @@ Samborondón, Ecuador
 
 | Fecha    | Versión                    | Descripción                               | Responsable |
 |----------|---------------------------------|-------------------------------------------|-------------|
-| 07/02/26 | 1.0.0 | requerimientos de software TicketService | Equipo de Desarrollo |
+| 08/02/26 | 1.0.0 | Requerimientos de software TicketService | Equipo de Desarrollo |
 
 ---
 
