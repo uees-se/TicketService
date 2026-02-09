@@ -21,7 +21,7 @@ Jose Moises Arias Zavala
 
 <br><br>
 
-**08 de febreo, 2026**  
+**08 de Febrero, 2026**  
 Samborondón, Ecuador
 </div>
 
