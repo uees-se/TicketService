@@ -220,8 +220,7 @@ A continuación, se listan los casos de uso a implementarse:
 | Codigo | CU-MS-001 | 
 |--------|----------|
 | Nombre | Asignar rol al usuario | 
-| Flujo de eventos: | 1. El Administrador selecciona un usuario de la lista. 2. Elige el nuevo rol (Administrador, Técnico o Usuario). 3. El sistema actualiza los permisos en el perfil del usuario 4. Se confirma la actualización.
- |
+| Flujo de eventos: | 1. El Administrador selecciona un usuario de la lista. 2. Elige el nuevo rol (Administrador, Técnico o Usuario). 3. El sistema actualiza los permisos en el perfil del usuario 4. Se confirma la actualización. |
 | Condición de entrada: | El usuario debe estar autenticado como Administrador. |
 | Condición de salida: | El usuario seleccionado adquiere las nuevas facultades del rol asignado. |
 | Requerimientos de calidad: | Solo un usuario con nivel de acceso "Administrador" puede ejecutar esta acción. | 
@@ -234,8 +233,7 @@ A continuación, se listan los casos de uso a implementarse:
 | Codigo | CU-MA-001 | 
 |--------|----------|
 | Nombre | Registrar ticket | 
-|Flujo de eventos: | 1. El Usuario selecciona la opción "Crear Ticket". 2. El sistema despliega un formulario solicitando Título, Categoría y Prioridad.  3. El Usuario ingresa la descripción del problema y presiona "Guardar". 4. El sistema valida la información y asigna un ID único al ticket. 
- | 
+|Flujo de eventos: | 1. El Usuario selecciona la opción "Crear Ticket". 2. El sistema despliega un formulario solicitando Título, Categoría y Prioridad.  3. El Usuario ingresa la descripción del problema y presiona "Guardar". 4. El sistema valida la información y asigna un ID único al ticket.  | 
 | Condición de entrada: | El usuario debe estar autenticado en el sistema con el rol de "Usuario". | 
 | Condición de salida: | El ticket se almacena en la base de datos con estado "Creado". | 
 |Requerimientos de calidad:  | El sistema debe confirmar el registro en menos de 2 segundos. | 
@@ -246,8 +244,7 @@ A continuación, se listan los casos de uso a implementarse:
 | Codigo | CU-MA-002 | 
 |--------|----------|
 | Nombre | Modificar ticket |
-| Flujo de eventos: | 1. El Usuario o Técnico selecciona un ticket existente de su lista.  2. El sistema permite editar la descripción o adjuntar nueva información.  3. El sistema actualiza los cambios y registra la fecha de modificación.
- |
+| Flujo de eventos: | 1. El Usuario o Técnico selecciona un ticket existente de su lista.  2. El sistema permite editar la descripción o adjuntar nueva información.  3. El sistema actualiza los cambios y registra la fecha de modificación. |
 | Condición de entrada: | El ticket no debe estar en estado "Cerrado". |
 | Condición de salida: | Los cambios se persisten en la base de datos de TicketService. |
 | Requerimientos de calidad: | Mantener la integridad referencial del historial del ticket. |
@@ -258,8 +255,7 @@ A continuación, se listan los casos de uso a implementarse:
 | Codigo | CU-MA-003 | 
 |--------|----------|
 | Nombre | Eliminar  ticket |
-|Flujo de eventos:|1. El Administrador accede al panel de gestión de tickets. 2. Selecciona el ticket específico y presiona "Eliminar". 3. El sistema solicita una confirmación de la eliminación. 4. El ticket se elimina lógicamente del sistema.
-|
+|Flujo de eventos:|1. El Administrador accede al panel de gestión de tickets. 2. Selecciona el ticket específico y presiona "Eliminar". 3. El sistema solicita una confirmación de la eliminación. 4. El ticket se elimina lógicamente del sistema.|
 |Condición de entrada:|El usuario debe poseer el rol de "Administrador".|
 |Condición de salida:|El registro desaparece de las bandejas de entrada de los técnicos.|
 |Requerimientos de calidad:|Solo el Administrador puede realizar eliminaciones para evitar pérdida accidental de información.|
@@ -273,8 +269,7 @@ A continuación, se listan los casos de uso a implementarse:
 | Codigo | CU-003 | 
 |--------|----------|
 | Nombre | Registrar ticket de soporte |
-| Flujo de eventos: | 1. El Usuario selecciona "Nuevo Ticket".  2. El sistema muestra un formulario para ingresar título, descripción, categoría y prioridad.  3. El usuario completa los datos y guarda la solicitud.  4. El sistema valida la información y genera un registro único con estado "Creado"
- | 
+| Flujo de eventos: | 1. El Usuario selecciona "Nuevo Ticket".  2. El sistema muestra un formulario para ingresar título, descripción, categoría y prioridad.  3. El usuario completa los datos y guarda la solicitud.  4. El sistema valida la información y genera un registro único con estado "Creado" | 
 | Condición de entrada: | El usuario debe haber iniciado sesión exitosamente en el sistema. | 
 | Condición de salida: | Se crea un nuevo registro en la base de datos y se notifica al usuario su número de ticket. | 
 | Requerimientos de calidad: | La interfaz debe ser intuitiva y permitir el registro en menos de 3 pasos. | 
