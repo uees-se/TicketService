@@ -30,105 +30,165 @@ Guayaquil, Ecuador
 | Fecha | Versión | Descripción | Responsable |
 |--------|----------|-------------|-------------|
 | 19/01/26 | 1.0.0 | Creación del documento TicketService | Equipo de Desarrollo |
-| 28/02/26 | 1.1.0 | Documento completo con trazabilidad y formato IEEE | Grupo 5 |
+| 28/02/26 | 1.1.0 | Documento completo con trazabilidad y formato IEEE | Equipo de desarrollo |
 
 ---
 
 # 📑 Contenido
 
-1. Introducción  
-2. Descripción General  
-3. Mapeo de Hardware y Software  
-4. Diagrama de Infraestructura  
-5. Arquitectura del Sistema (Macro)  
-6. Diagrama de Componentes (Micro)  
-7. Modelo Entidad-Relación  
-8. Control de Acceso y Seguridad  
-9. Tabla de Trazabilidad de Requisitos  
-10. Conclusiones  
-11. Referencias  
+1. Historial de Versionamiento  
+2. Listado de tablas  
+3. Listado de gráficos  
+4. Introducción  
+5. Mapeo del Hardware y Software  
+   - 5.1 Diagrama de Infraestructura  
+   - 5.2 Diagrama de Arquitectura (Macro)  
+   - 5.3 Diagrama de Componentes (Micro)  
+   - 5.4 Diagrama de Entidad-Relación  
+6. Control de Acceso y Seguridad  
+7. Referencias  
 
 ---
 
 # Listado de tablas
 
-## Gráfico 1 – Arquitectura
-
-![Arquitectura](imagenes/Arquitectura.jpg)
+![Arquitectura](imagenes/Tabla_de_stakeholders.png)
 
 ---
 
-## Gráfico 1 – Arquitectura
+## Listado de gráficos
 
-![Arquitectura](imagenes/Arquitectura.jpg)
+
+![Arquitectura](imagenes/Infraestructura.png)
+![Arquitectura](imagenes/Diagrama_Arquitectura.jpg)
+![Arquitectura](imagenes/Componentes.png)
+![Arquitectura](imagenes/Entidad_Relacion.jpg)
 
 ---
 
 
 
-# I. INTRODUCCIÓN
+# INTRODUCCIÓN
 
-TicketService es un sistema web diseñado para la creación, gestión y seguimiento de tickets de soporte técnico y órdenes de trabajo en organizaciones educativas y pequeñas empresas.
+TicketService es un sistema web diseñado para la creación, gestión y seguimiento de tickets de soporte técnico y órdenes de trabajo dentro de organizaciones educativas y pequeñas empresas.
 
-El sistema centraliza solicitudes, asigna técnicos responsables, controla prioridades, gestiona SLA y genera reportes de desempeño.
+El sistema permite centralizar las solicitudes de soporte, asignarlas a técnicos responsables, establecer prioridades, controlar tiempos de atención (SLA) y generar reportes de desempeño.
 
-Desde el punto de vista arquitectónico, se implementa bajo una arquitectura cliente-servidor en tres capas, garantizando:
+Desde el punto de vista arquitectónico, TicketService está diseñado bajo una arquitectura cliente-servidor en tres capas, garantizando:
 
 - Separación de responsabilidades  
 - Escalabilidad  
 - Mantenibilidad  
-- Seguridad  
-
+- Seguridad en el manejo de datos  
+El objetivo principal del diseño arquitectónico es asegurar que el sistema pueda crecer, ser desplegado tanto en entornos locales como en la nube y soportar múltiples usuarios concurrentes.
 ---
 
-# II. DESCRIPCIÓN GENERAL DEL SISTEMA
+# Mapeo de Hardware y Software
 
-## A. Propósito
+## Componentes de Hardware
 
-Definir la arquitectura de software del sistema TicketService, incluyendo infraestructura, componentes, modelo de datos y mecanismos de seguridad.
+Cliente
+- Computadora de escritorio o laptop  
+- Navegador web moderno 
+- Conexión a Internet o red local
 
-## B. Alcance
+Servidor
+- Procesador mínimo 2 núcleos  
+- 8GB RAM recomendados 
+- Almacenamiento SSD
+- ASistema operativo Linux o Windows Server
 
-El sistema permitirá:
+Base de Datos
+- 	Puede estar en el mismo servidor (entorno pequeño)
+- 	O servidor dedicado en la nube (AWS, Azure, DigitalOcean)
 
-1. Gestión de usuarios y roles.
-2. Creación, actualización y cierre de tickets.
-3. Clasificación por prioridad y categoría.
-4. Asignación de tickets a técnicos.
-5. Generación de reportes.
-6. Control de SLA.
+## Mapeo de Software
+
+Software Cliente
+-	Navegador web (Chrome, Edge, Firefox)
+-	HTML5
+-	CSS3
+-	JavaScript
+
+Backend
+-	Node.js / Java / Python (según implementación)
+-	Framework (Express / Spring Boot / Django)
+
+Base de Datos
+-	MySQL o PostgreSQL
+
+Servidor Web
+-	Nginx o Apache
+
+Control de Versiones
+-	Git (Repositorio en GitHub)
 
 ---
+El sistema TicketService se implementa bajo un modelo cliente-servidor. 
+El cliente utiliza navegadores web modernos en computadoras con conexión a internet o red local.          
 
-# III. MAPEO DE HARDWARE Y SOFTWARE
+El servidor requiere mínimo un procesador de 2 núcleos, 8GB de RAM y almacenamiento SSD, ejecutando Linux o Windows Server. 
 
-## A. Hardware
+El backend puede desarrollarse en Node.js, Java o Python, utilizando frameworks como Express, Spring Boot o Django. 
 
-### Cliente
-- Computadora o laptop
-- Navegador moderno
-- Conexión a Internet
+La base de datos recomendada es MySQL o PostgreSQL, y el servidor web puede utilizar Nginx o Apache.
 
-### Servidor
-- Procesador mínimo 2 núcleos
-- 8GB RAM recomendados
-- SSD
-- Linux o Windows Server
 
-### Base de Datos
-- Local o nube (AWS, Azure, DigitalOcean)
+# Diagrama de Infraestructura
+
+## Descripción del Diagrama
+
+La infraestructura de TicketService se basa en un modelo cliente-servidor.
+### Componentes:
+1.	Usuarios (Administrador, Técnico, Usuario)
+2.	Navegador Web
+3.	Servidor Web / Aplicación
+4.	Base de Datos
+5.	Servidor de Respaldo (opcional)
+
+### Representación textual del Diagrama de Infraestructura
+```mermaid
+[Usuarios]
+     |
+     v
+[Navegador Web]
+     |
+     v
+[Servidor Web / API Backend]
+     |
+     v
+[Base de Datos]
+```
+### Descripción Técnica
+-	Los usuarios acceden mediante navegador.
+-	El navegador envía solicitudes HTTP/HTTPS.
+-	El servidor procesa la lógica de negocio.
+-	La base de datos almacena la información persistente.
+-	El acceso se realiza mediante conexión segura SSL/TLS.
 
 ---
+La infraestructura se basa en un modelo cliente-servidor. 
+Los usuarios acceden al sistema mediante un navegador web que se comunica vía HTTP/HTTPS con el servidor de aplicación. 
 
-## B. Software
+El servidor procesa la lógica de negocio y se conecta a la base de datos para almacenamiento persistente.
+ 
+Se recomienda el uso de SSL/TLS para garantizar la seguridad en la transmisión de datos.
 
-### Cliente
-- HTML5
-- CSS3
-- JavaScript
-- Chrome / Edge / Firefox
+---
+# Diagrama de Arquitectura
+Se adopta una arquitectura en tres capas: presentación, lógica de negocio y datos. 
 
-### Backend
+-	La capa de presentación incluye la interfaz web y formularios.
+-	La capa de lógica gestiona tickets, usuarios, roles, SLA y reportes.
+-	La capa de datos administra la base de datos relacional. 
+-	Esta arquitectura permite escalabilidad, mantenibilidad y separación clara de responsabilidades.
+### Tipo de Arquitectura
+Arquitectura en 3 Capas (Three-Tier Architecture)
+1.	Capa de Presentación
+2.	Capa de Lógica de Negocio
+3.	Capa de Datos
+
+### Representación del Diagrama de Arquitectura
 - Node.js / Java / Python
 - Express / Spring Boot / Django
 
@@ -146,6 +206,21 @@ El sistema permitirá:
 # IV. DIAGRAMA DE INFRAESTRUCTURA
 
 El sistema sigue modelo cliente-servidor.
+
+## Diagrama de Infraestructura
+
+```mermaid
+[Usuarios]
+     |
+     v
+[Navegador Web]
+     |
+     v
+[Servidor Web / API Backend]
+     |
+     v
+[Base de Datos]
+```
 
 
 
