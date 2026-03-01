@@ -189,240 +189,251 @@ Arquitectura en 3 Capas (Three-Tier Architecture)
 3.	Capa de Datos
 
 ### Representación del Diagrama de Arquitectura
-- Node.js / Java / Python
-- Express / Spring Boot / Django
-
-### Base de Datos
-- MySQL o PostgreSQL
-
-### Servidor Web
-- Nginx o Apache
-
-### Versionamiento
-- Git (GitHub)
-
----
-
-# IV. DIAGRAMA DE INFRAESTRUCTURA
-
-El sistema sigue modelo cliente-servidor.
-
-## Diagrama de Infraestructura
-
 ```mermaid
-[Usuarios]
+CAPA DE PRESENTACIÓN
+- Interfaz Web
+- Formularios de Tickets
+- Panel Administrativo
+
      |
      v
-[Navegador Web]
+CAPA DE LÓGICA DE NEGOCIO
+- Gestión de Tickets
+- Gestión de Usuarios
+- Control de Roles
+- SLA
+- Reportes
+
      |
      v
-[Servidor Web / API Backend]
+CAPA DE DATOS
+- Base de Datos
+- Tablas
+- Procedimientos
+```
+
+### Justificación Arquitectónica
+Se eligió arquitectura en 3 capas porque:
+-	Permite separar responsabilidades
+-	Facilita mantenimiento
+-	Permite escalabilidad futura
+-	Es adecuada para aplicaciones web académicas y empresariales        pequeñas
+
+
+### Conclusión de la selección
+El diseño arquitectónico de TicketService demuestra:
+-	Separación clara de responsabilidades
+-	Modelo de infraestructura escalable
+-	Base de datos estructurada y normalizada
+-	Diseño adecuado para implementación web
+La arquitectura propuesta garantiza mantenibilidad, seguridad y crecimiento      futuro del sistema.
+
+
+# Diagrama de Componentes (Micro)
+
+### Descripción
+
+El Diagrama de Componentes (micro) detalla la estructura interna de la capa de lógica de negocio del sistema TicketService, mostrando los módulos que         implementan la gestión de usuarios, tickets, asignaciones y seguridad, así como su relación con la base de datos.
+Este nivel complementa el diagrama macro (3 capas) previamente definido.
+
+
+## Componentes Identificados
+### 1. Capa de Presentación
+#### Frontend Web
+-	Formularios de tickets
+-	Panel administrador
+-	Panel técnico
+-	Dashboard de reportes
+-	Comunicación vía HTTP/HTTPS
+
+### 2. Capa de Lógica de Negocio
+#### AuthController
+-	Autenticación
+-	Validación de credenciales
+-	Gestión de sesiones
+#### UserService
+-	Gestión de usuarios y roles
+#### TicketService
+-	Crear, editar y cerrar tickets
+-	Control de estado, prioridad y categoría
+-	Gestión de SLA
+
+ #### AssignmentService
+-	Asignación de tickets a técnicos
+ #### CommentService
+-	Registro de comentarios
+ #### ReportService
+-	Métricas y reportes (estado, SLA, desempeño)
+
+#### SecurityModule (Transversal)
+-	Control de acceso basado en roles (RBAC)
+-	Validación de permisos
+-	Protección de rutas
+
+### 3. Capa de Datos
+Repositorios (acceso a base de datos relacional):
+-	UserRepository
+-	TicketRepository
+-	AssignmentRepository
+-	CommentRepository
+-	RoleRepository
+-	CategoriaRepository
+-	PrioridadRepository
+-	EstadoRepository
+Garantizan integridad referencial y persistencia de datos.
+## Representación Simplificada
+```mermaid
+[Frontend Web]
+     |
+     v
+[Controllers / Services]
+     |
+     v
+[Security Module]
+     |
+     v
+[Repositories]
      |
      v
 [Base de Datos]
 ```
-
-
-
-La comunicación se realiza mediante HTTPS con SSL/TLS.
-
----
-
-## Gráfico 1 – Arquitectura
-
-![Arquitectura](imagenes/Arquitectura.jpg)
-
----
-
-# V. ARQUITECTURA DEL SISTEMA (MACRO)
-
-## Arquitectura en 3 Capas
-
-### 1. Capa de Presentación
-- Interfaz web
-- Formularios
-- Dashboard
-
-### 2. Capa de Lógica de Negocio
-- Gestión de tickets
-- Gestión de usuarios
-- Control de roles
-- SLA
-- Reportes
-
-### 3. Capa de Datos
-- Base de datos relacional
-- Tablas
-- Procedimientos
-
 ### Justificación
+El diseño micro respeta la arquitectura en 3 capas definida en el documento:
+-	Separación de responsabilidades
+-	Escalabilidad
+-	Mantenibilidad
+-	Seguridad mediante RBAC
+Permite que cada módulo cumpla una función específica dentro del sistema   TicketService sin afectar otros componentes.
 
-- Separación de responsabilidades
-- Escalabilidad
-- Mantenibilidad
-- Adecuada para aplicaciones web académicas
-
----
-
-# VI. DIAGRAMA DE COMPONENTES (MICRO)
-
-## Capa de Lógica
-
-- AuthController
-- UserService
-- TicketService
-- AssignmentService
-- CommentService
-- ReportService
-- SecurityModule (RBAC)
-
-## Capa de Datos
-
-- UserRepository
-- TicketRepository
-- AssignmentRepository
-- CommentRepository
-- RoleRepository
-- CategoriaRepository
-- PrioridadRepository
-- EstadoRepository
 
 ---
 
-## Gráfico 2 – Flujo del Ticket
+# Diagrama Entidad-Relación
 
-![Flujo](imagenes/Flujo_de_ticket.jpg)
+#### Usuario
+-	id_usuario (PK)
+-	nombre
+-	correo
+-	contraseña
+-	id_rol (FK)
+#### Rol
+-	id_rol (PK)
+-	nombre_rol
+#### Relación:
+Un rol puede tener muchos usuarios.
 
----
+#### Ticket
+-	id_ticket (PK)
+-	titulo
+-	descripcion
+-	fecha_creacion
+-	fecha_cierre
+-	id_usuario (FK)
+-	id_prioridad (FK)
+-	id_categoria (FK)
+-	id_estado (FK)
+#### Relaciones:
+-	Un usuario crea muchos tickets.
+-	Un ticket pertenece a una categoría.
+-	Un ticket tiene una prioridad.
+-	Un ticket tiene un estado.
+ 
+#### Comentario
+-	id_comentario (PK)
+-	descripcion
+-	fecha
+-	id_ticket (FK)
+-	id_usuario (FK)
+#### Relación:
+Un ticket puede tener muchos comentarios.
+ 
+#### Asignación
+-	id_asignacion (PK)
+-	id_ticket (FK)
+-	id_tecnico (FK)
+-	fecha_asignacion
+#### Relación:
+Un técnico puede tener múltiples tickets asignados.
 
-# VII. MODELO ENTIDAD-RELACIÓN
-
-## Entidades
-
-### Usuario
-- id_usuario (PK)
-- nombre
-- correo
-- contraseña
-- id_rol (FK)
-
-### Rol
-- id_rol (PK)
-- nombre_rol
-
-### Ticket
-- id_ticket (PK)
-- titulo
-- descripcion
-- fecha_creacion
-- fecha_cierre
-- id_usuario (FK)
-- id_prioridad (FK)
-- id_categoria (FK)
-- id_estado (FK)
-
-### Comentario
-- id_comentario (PK)
-- descripcion
-- fecha
-- id_ticket (FK)
-- id_usuario (FK)
-
-### Asignación
-- id_asignacion (PK)
-- id_ticket (FK)
-- id_tecnico (FK)
-- fecha_asignacion
-
-Relaciones:
-
-- Rol 1 — N Usuario  
-- Usuario 1 — N Ticket  
-- Ticket 1 — N Comentario  
-- Ticket 1 — N Asignación  
-- Ticket N — 1 Prioridad  
-- Ticket N — 1 Categoría  
-- Ticket N — 1 Estado  
-
-El modelo está normalizado y mantiene integridad referencial.
 
 ---
 
-# VIII. CONTROL DE ACCESO Y SEGURIDAD
+### Representación Simplificada del ER
+ROL 1 ----- N USUARIO
 
-## Modelo RBAC
+USUARIO 1 ----- N TICKET
 
-### Administrador
-- Gestión completa del sistema
+TICKET 1 ----- N COMENTARIO
 
-### Técnico
-- Gestiona tickets asignados
+TICKET N ----- 1 PRIORIDAD
 
-### Usuario
-- Crea y consulta tickets
+TICKET N ----- 1 CATEGORIA
 
----
+TICKET N ----- 1 ESTADO
 
-## Mecanismos de Seguridad
-
-### Autenticación
-- Login con correo y contraseña
-- Contraseñas cifradas (hash seguro)
-
-### Autorización
-- Validación por rol
-- Restricción de rutas
-
-### Seguridad de Comunicación
-- HTTPS
-- SSL/TLS
-
-### Seguridad de Datos
-- Claves foráneas
-- Validación contra SQL Injection
-- Control de sesiones
-
-### Respaldo
-- Copias periódicas
-- Restauración ante fallos
+TICKET 1 ----- N ASIGNACION
 
 ---
+El modelo entidad-relación incluye las entidades Usuario, Rol, Ticket, Categoría, Prioridad, Estado, Comentario y Asignación. 
+Un rol puede tener múltiples usuarios. 
+Un usuario puede crear múltiples tickets.
+Un ticket puede tener múltiples comentarios y asignaciones. 
+Cada ticket se asocia con una categoría, prioridad y estado. 
+El modelo se encuentra normalizado para evitar redundancia y garantizar integridad referencial.
 
-# IX. TABLA DE TRAZABILIDAD DE REQUISITOS
 
-| ID | Requisito | Tipo | Módulo | Entidad |
-|----|-----------|------|--------|---------|
-| RF-01 | Crear ticket | Funcional | TicketService | Ticket |
-| RF-02 | Editar ticket | Funcional | TicketService | Ticket |
-| RF-03 | Cerrar ticket | Funcional | TicketService | Ticket |
-| RF-04 | Asignar ticket | Funcional | AssignmentService | Asignación |
-| RF-05 | Agregar comentario | Funcional | CommentService | Comentario |
-| RF-06 | Gestionar usuarios | Funcional | UserService | Usuario |
-| RF-07 | Autenticación | Funcional | AuthController | Usuario |
-| RF-08 | Generar reportes | Funcional | ReportService | Ticket |
-| RNF-01 | Seguridad HTTPS | No Funcional | Infraestructura | Sistema |
-| RNF-02 | Control RBAC | No Funcional | SecurityModule | Rol |
-| RNF-03 | Integridad referencial | No Funcional | Base de Datos | Todas |
-| RNF-04 | Disponibilidad 99% | No Funcional | Infraestructura | Sistema |
+## Control de Acceso y Seguridad 
+### Descripción General
+El sistema TicketService implementa un modelo de control de acceso basado en roles (RBAC – Role Based Access Control), garantizando que cada usuario acceda únicamente a las funcionalidades autorizadas según su perfil.
+Además, se aplican mecanismos de seguridad para proteger:
+-	Confidencialidad de la información
+-	Integridad de los datos
+-	Disponibilidad del sistema
+-	Autenticación y autorización de usuarios
 
----
+### Actores / Descripción / Tareas
+| Actor | Descripción | Tareas / Permisos | 
+|--------|----------|-------------|
+| Administrador | Usuario con control total del sistema. Responsable de la configuración general y supervisión. | - Crear, editar y eliminar usuarios - Asignar roles - Configurar categorías y prioridades - Visualizar todos los tickets - Generar reportes globales - Cerrar o reabrir tickets
+ |
+| Técnico | Usuario encargado de resolver tickets asignados. | - Visualizar tickets asignados - Cambiar estado del ticket - Agregar comentarios técnicos - Registrar fecha de solución - Actualizar progreso del ticket|
+ | Usuario (Cliente Interno) | Persona que genera solicitudes de soporte. | - Crear nuevos tickets - Adjuntar información descriptiva - Consultar estado de sus tickets - Agregar comentarios adicionales - Cerrar ticket (si está resuelto)|
 
-# X. CONCLUSIONES
 
-El diseño arquitectónico de TicketService garantiza:
+### Mecanismos de Seguridad Implementados
+#### Autenticación
+-	Inicio de sesión con correo electrónico y contraseña.
+-	Contraseñas almacenadas en formato cifrado (hash seguro).
+-	Validación de credenciales en el servidor.
+#### Autorización
+-	Validación de permisos según rol.
+-	Restricción de acceso a rutas y funcionalidades.
+-	Separación clara entre funciones administrativas y operativas.
+#### Seguridad en la Comunicación
+-	Uso de protocolo HTTPS.
+-	Certificado SSL/TLS.
+-	Protección contra ataques Man-in-the-Middle.
+#### Seguridad de Datos
+-	Integridad referencial en base de datos.
+-	Restricciones de claves foráneas.
+-	Validación de datos de entrada (prevención de SQL Injection).
+-	Control de sesiones activas.
+#### Respaldo y Recuperación
+-	Copias de seguridad periódicas.
+-	Servidor de respaldo opcional.
+-	Posibilidad de restauración ante fallos.
+#### Principios de Seguridad Aplicados
+-	Principio de mínimo privilegio
+-	Separación de responsabilidades
+-	Confidencialidad, Integridad y Disponibilidad (Triada CIA)
+-	Trazabilidad de acciones mediante registros (logs)
+#### Conclusión de Seguridad
+El modelo de control de acceso de TicketService garantiza que cada actor           interactúe con el sistema dentro de límites definidos, reduciendo riesgos de        acceso no autorizado, pérdida de información o manipulación indebida de datos.
+La implementación de autenticación segura, autorización por roles y                      comunicación cifrada fortalece la confiabilidad del sistema y lo hace apto para entornos académicos y empresariales.
 
-- Separación clara de responsabilidades  
-- Modelo escalable  
-- Seguridad mediante RBAC  
-- Integridad de datos  
-- Adaptabilidad a entornos académicos y empresariales  
 
-La arquitectura en tres capas facilita el mantenimiento y evolución futura del sistema.
+## XI. REFERENCIAS
 
----
-
-# XI. REFERENCIAS
-
-[1] R. Pressman, *Ingeniería de Software*, McGraw-Hill, 2014.  
-[2] I. Sommerville, *Software Engineering*, Pearson, 2016.  
-[3] IEEE Computer Society, *SWEBOK*, 2014.
+[1] Pressman, R. (2014). Ingeniería de software: Un enfoque práctico. McGraw-Hill.  
+[2] Sommerville, I. (2016). Software engineering. Pearson Education.  
+[3] IEEE Computer Society. (2014). Guide to the Software Engineering Body of Knowledge (SWEBOK).
