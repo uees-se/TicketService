@@ -37,51 +37,53 @@ Samborondon, Ecuador
 # 📑 Contenido
 
 
-Historial de Versionamiento
+- Historial de Versionamiento
 
-Listado de tablas	
+- Listado de tablas	
 
-Listado de gráficos	
+- Listado de gráficos	
 
-Introducción	
+- Introducción	
 
-Diagrama de Clases	
+- Diagrama de Clases	
 
-Diagrama de Componentes	
+- Diagrama de Componentes	
 
-Diagrama de Interacción de Objetos	
+- Diagrama de Interacción de Objetos	
 
-Lista de Casos de Uso	
+- Lista de Casos de Uso	
 
-Descripción de Casos de Uso	
+- Descripción de Casos de Uso	
 
-Módulo de Seguridad (MS)	
+- Módulo de Seguridad (MS)	
 
-Módulo Académico (MA)	
+- Módulo Académico (MA)	
 
-Módulo de Juego Interactivo (MJI)
+- Módulo de Juego Interactivo (MJI)
 
-Lista de Escenarios	
+- Lista de Escenarios	
 
-Descripción de Escenarios	
+- Descripción de Escenarios	
 
-Módulo de Seguridad (MS)	
+- Módulo de Seguridad (MS)	
 
-Diagrama de Casos de Uso	
+- Diagrama de Casos de Uso	
 
-Diagrama de Secuencia	
+- Diagrama de Secuencia	
 
-Módulo de Seguridad (MS)	
+- Módulo de Seguridad (MS)	
 
-Diagrama de Colaboración	
+- Diagrama de Colaboración	
 
-Módulo de Seguridad (MS)	
+- Módulo de Seguridad (MS)	
 
-Diagrama de Actividad	
+- Diagrama de Actividad	
 
-Prototipos	
+- Prototipos	
 
-Módulo de Seguridad (MS)	
+---
+
+# Módulo de Seguridad (MS)	
 
 
 
@@ -104,15 +106,15 @@ Tabla 1. Listado de los stakeholders
 
 ## Listado de gráficos
 
-![Arquitectura](imagenes/grafico1.png)
+![Arquitectura](imagenes/Grafico1.png)
 
-![Arquitectura](imagenes/grafico2.png)
+![Arquitectura](imagenes/Grafico2.png)
 
-![Arquitectura](imagenes/grafico3.png)
+![Arquitectura](imagenes/Grafico3.png)
 
-![Arquitectura](imagenes/grafico4.png)
+![Arquitectura](imagenes/Grafico4.png)
 
-![Arquitectura](imagenes/grafico5.png)
+![Arquitectura](imagenes/Grafico5.png)
 
 ---
 
@@ -322,7 +324,7 @@ A continuación, se listan los casos de uso a implementarse:
 
 # Diagrama de Casos de Uso
 
-![Arquitectura](imagenes/grafico6.png)
+![Arquitectura](imagenes/Grafico6.png)
 
 ---
 
